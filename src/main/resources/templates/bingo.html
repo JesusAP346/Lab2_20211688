@@ -9,7 +9,28 @@
 
 </head>
 <body>
-    <h1>Juego iniciado</h1>
+
+    <div class="container">
+        <div class="row mt-5">
+            <h3>Juego de bingo</h3>
+        </div>
+        <div class="row text-center" th:each="tarjeta : ${listaTarjetas}" >
+            <h3 th:text="|Tarjeta ${tarjeta + 1}|"></h3>
+
+            <table class="table table-striped-columns">
+                <tr class="mt-3">
+                    <th >1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+            </table>
+
+        </div>
+
+
+    </div>
+
 
 </body>
 </html>
