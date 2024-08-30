@@ -11,6 +11,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value={"/home","/",""},method= RequestMethod.GET)
 public class BingoController {
+
     @GetMapping({"/","/formulario",""})
     public String mostrarConfiguracionJuego(){
         return "configuracion";
