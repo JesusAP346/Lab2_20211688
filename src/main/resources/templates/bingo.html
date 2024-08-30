@@ -19,10 +19,8 @@
 
             <table class="table table-striped-columns">
                 <tr class="mt-3">
-                    <th >1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th th:each="numero : ${numerosRandom}" th:text="${numero}"></th>
+
                 </tr>
             </table>
 

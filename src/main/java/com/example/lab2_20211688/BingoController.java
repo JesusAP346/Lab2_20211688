@@ -16,7 +16,7 @@ public class BingoController {
         return "configuracion";
     }
     @PostMapping({"/formularioPost"})
-    public String formularioPost(Model model,@RequestParam("tamanho") String tamanho, @RequestParam("numeroTarjetas") Integer numeroTarjetas){
+    public String formularioPost(Model model,@RequestParam("tamanho") Integer tamanho, @RequestParam("numeroTarjetas") Integer numeroTarjetas){
         //imprimimos en terminal para verificar que llega al controlador
         System.out.println(tamanho);
         System.out.println(numeroTarjetas);
@@ -25,7 +25,19 @@ public class BingoController {
         for(int i=0;i<numeroTarjetas;i++){
             listaTarjetas.add(i);
         }
+
+        //llenamos numeros random
+        ArrayList<Integer> numerosRandom = new ArrayList<>();
+        for(int i=0;i<tamanho*tamanho;i++){
+            numerosRandom.add((int)(Math.random()*99+1));
+
+        }
+
+
         model.addAttribute("listaTarjetas",listaTarjetas);
+        model.addAttribute("tamanho",tamanho);
+        model.addAttribute("numerosRandom",numerosRandom);
+
 
 
         return "bingo";
