@@ -33,25 +33,11 @@ public class BingoController {
 
         }
 
-        //llenamos numeros random en arreglo
-        Integer[][] numerosRandom2 = new Integer[tamanho][tamanho];
-        for(int i=0;i<tamanho;i++){
-            for(int j=0;j<tamanho;j++){
-                numerosRandom2[i][j] = (int)(Math.random()*99+1);
-            }
-
-        }
-
-
 
 
         model.addAttribute("listaTarjetas",listaTarjetas);
         model.addAttribute("tamanho",tamanho);
         model.addAttribute("numerosRandom",numerosRandom);
-        model.addAttribute("numerosRandom2",numerosRandom2);
-
-
-
 
 
         return "bingo";
